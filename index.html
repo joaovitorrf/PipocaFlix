@@ -1,169 +1,258 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>PipocaFlix | Experiência de Cinema 4K</title>
-
-<meta name="description" content="Acesse o maior catálogo de filmes e séries em 4K HDR. Assine agora o PipocaFlix.">
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIPOCAFLIX | O Cinema na sua Casa</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
 <body>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-content">
-
-    <div class="badge">SÉRIES EXCLUSIVAS & ORIGINAIS</div>
-
-    <h1>Sua sala de estar,<br>agora é um Cinema.</h1>
-
-    <p>
-      Assista a milhares de títulos em 4K Ultra HD.
-      Sem contratos, cancele quando quiser.
-    </p>
-
-    <div class="buttons">
-      <a href="#planos" class="btn primary">ASSINAR AGORA</a>
-      <a href="#catalogo" class="btn secondary">VER CATÁLOGO</a>
+    <div class="loader" id="loader">
+        <div class="spinner"></div>
+        <h2 class="logo-text">🔥 PIPOCA<span>FLIX</span></h2>
     </div>
 
-  </div>
-</section>
-
-<!-- VSL -->
-<section class="section dark">
-  <div class="container">
-
-    <h2 class="title">A revolução do streaming</h2>
-
-    <div class="video">
-      <iframe 
-        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-        allowfullscreen>
-      </iframe>
-    </div>
-
-  </div>
-</section>
-
-<!-- CATALOGO -->
-<section id="catalogo" class="section">
-  <div class="container">
-
-    <h2 class="title">Tendências da Semana</h2>
-
-    <div class="grid">
-
-      <div class="card">
-        <img src="https://image.tmdb.org/t/p/w500/8Gxv2mYgiFAj98mb791o9CzsS6v.jpg">
-      </div>
-
-      <div class="card">
-        <img src="https://image.tmdb.org/t/p/w500/r2J0VzYnUEeoSwAVGKyac3D3Ldy.jpg">
-      </div>
-
-      <div class="card">
-        <img src="https://image.tmdb.org/t/p/w500/q719jXXLsVp68uU4pSbipt6Zrr2.jpg">
-      </div>
-
-      <div class="card">
-        <img src="https://image.tmdb.org/t/p/w500/6MK9mY7k9x7S9S68S9Y8vS7Y8S.jpg">
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-<!-- PLANOS -->
-<section id="planos" class="section dark">
-  <div class="container">
-
-    <h2 class="title">Planos que cabem no bolso</h2>
-
-    <div class="plans">
-
-      <div class="plan">
-
-        <h3>Mensal Básico</h3>
-
-        <div class="price">
-          R$ 9,90 <span>/mês</span>
+    <header id="header">
+        <div class="container nav-container">
+            <div class="logo">🔥 PIPOCA<span>FLIX</span></div>
+            <nav>
+                <a href="#inicio">Início</a>
+                <a href="#beneficios">Benefícios</a>
+                <a href="#planos">Planos</a>
+                <a href="#faq">FAQ</a>
+            </nav>
+            <a href="#planos" class="btn btn-primary btn-sm">ASSINAR AGORA</a>
         </div>
+    </header>
 
-        <ul>
-          <li>Full HD</li>
-          <li>1 Tela</li>
-          <li>Acesso Total</li>
-        </ul>
+    <section class="hero" id="inicio">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <span class="badge">DISPONÍVEL EM 4K ULTRA HD</span>
+            <h1>Sua plataforma definitiva de <br><span>entretenimento</span></h1>
+            <p>Tenha acesso ao conteúdo da Netflix, Disney+, HBO Max, Prime Video e muito mais em um único lugar. O futuro do streaming chegou.</p>
+            
+            <div class="hero-btns">
+                <a href="#planos" class="btn btn-primary btn-lg pulse">ASSINAR AGORA</a>
+                <a href="#vsl" class="btn btn-secondary btn-lg">VER CATÁLOGO</a>
+            </div>
 
-        <a href="#" class="btn secondary full">ASSINAR</a>
-
-      </div>
-
-      <div class="plan highlight">
-
-        <div class="tag">MAIS ESCOLHIDO</div>
-
-        <h3>Anual Premium</h3>
-
-        <div class="price">
-          R$ 14,90 <span>/trimestre</span>
+            <div class="streaming-logos">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Disney%2B_logo.svg" alt="Disney">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/HBO_Max_Logo.svg" alt="HBO">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Prime_Video.png" alt="Prime">
+            </div>
         </div>
+    </section>
 
-        <ul>
-          <li>4K HDR</li>
-          <li>4 Telas</li>
-          <li>Download</li>
-          <li>Suporte VIP</li>
-        </ul>
+    <section class="stats">
+        <div class="container stats-grid">
+            <div class="stat-item">
+                <h3 class="counter" data-target="40000">0</h3>
+                <p>Filmes</p>
+            </div>
+            <div class="stat-item">
+                <h3 class="counter" data-target="10000">0</h3>
+                <p>Séries</p>
+            </div>
+            <div class="stat-item">
+                <h3 class="counter" data-target="800">0</h3>
+                <p>Canais de TV</p>
+            </div>
+            <div class="stat-item">
+                <h3>4K</h3>
+                <p>Qualidade Ultra HD</p>
+            </div>
+        </div>
+    </section>
 
-        <a href="https://wa.me/SEUNUMERO" class="btn primary full">
-          GARANTIR OFERTA
-        </a>
+    <section class="vsl" id="vsl">
+        <div class="container">
+            <div class="section-title">
+                <h2>Assista e entenda como funciona</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="video-container">
+                <div class="video-placeholder">
+                    <i class="fas fa-play"></i>
+                    </div>
+            </div>
+        </div>
+    </section>
 
-      </div>
+    <section class="features" id="beneficios">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-film"></i>
+                    <h3>Catálogo Completo</h3>
+                    <p>As maiores estreias do cinema e as séries mais premiadas do mundo.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Android & TV</h3>
+                    <p>Compatível com Smart TVs, celulares, TV Box e tablets.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Streaming Rápido</h3>
+                    <p>Tecnologia anti-travamento de última geração para uma fluidez total.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Seguro e Privado</h3>
+                    <p>Seus dados protegidos com criptografia de ponta a ponta.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-dollar-sign"></i>
+                    <h3>Custo Baixo</h3>
+                    <p>O melhor custo-benefício do mercado, sem taxas ocultas.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-globe"></i>
+                    <h3>Acesso Mundial</h3>
+                    <p>Assista de qualquer lugar do mundo com conexão à internet.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    </div>
+    <section class="devices">
+        <div class="container devices-content">
+            <div class="devices-text">
+                <h2>Assista em qualquer lugar, <br><span>a qualquer hora.</span></h2>
+                <p>Nossa plataforma é otimizada para todos os seus dispositivos favoritos. Comece no celular, termine na TV.</p>
+                <ul class="device-list">
+                    <li><i class="fas fa-check"></i> Smart TVs</li>
+                    <li><i class="fas fa-check"></i> Celulares e Tablets</li>
+                    <li><i class="fas fa-check"></i> TV Box & Firestick</li>
+                    <li><i class="fas fa-check"></i> Notebooks e PCs</li>
+                </ul>
+            </div>
+            <div class="devices-visual">
+                <div class="tv-mockup">
+                    <div class="screen">
+                        <img src="https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&q=80&w=1000" alt="Screen content">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  </div>
-</section>
+    <section class="pricing" id="planos">
+        <div class="container">
+            <div class="section-title">
+                <h2>Escolha seu plano</h2>
+                <p>Cancele quando quiser. Sem fidelidade.</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="plan-card">
+                    <h3>Básico</h3>
+                    <div class="price">R$ 29<span>,90/mês</span></div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> 1 Tela</li>
+                        <li><i class="fas fa-check"></i> Qualidade HD</li>
+                        <li><i class="fas fa-check"></i> Catálogo Completo</li>
+                    </ul>
+                    <a href="#" class="btn btn-outline">ESCOLHER PLANO</a>
+                </div>
+                <div class="plan-card featured">
+                    <div class="popular-badge">MAIS POPULAR</div>
+                    <h3>Premium</h3>
+                    <div class="price">R$ 49<span>,90/mês</span></div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> 3 Telas simultâneas</li>
+                        <li><i class="fas fa-check"></i> Qualidade 4K Ultra HD</li>
+                        <li><i class="fas fa-check"></i> Suporte Prioritário</li>
+                        <li><i class="fas fa-check"></i> Canais de TV Inclusos</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">ASSINAR AGORA</a>
+                </div>
+                <div class="plan-card">
+                    <h3>VIP</h3>
+                    <div class="price">R$ 89<span>,90/mês</span></div>
+                    <ul>
+                        <li><i class="fas fa-check"></i> 5 Telas simultâneas</li>
+                        <li><i class="fas fa-check"></i> Qualidade 8K Ready</li>
+                        <li><i class="fas fa-check"></i> Todos os Canais Premium</li>
+                        <li><i class="fas fa-check"></i> Eventos Pay-per-view</li>
+                    </ul>
+                    <a href="#" class="btn btn-outline">ESCOLHER PLANO</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- FAQ -->
-<section class="section">
-  <div class="container small">
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>Dúvidas Frequentes</h2>
+            </div>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <div class="accordion-header">Como funciona o PipocaFlix? <i class="fas fa-chevron-down"></i></div>
+                    <div class="accordion-body">Após a assinatura, você recebe seus dados de acesso via e-mail e WhatsApp instantaneamente. Basta logar no nosso app e aproveitar.</div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">Preciso de contrato de fidelidade? <i class="fas fa-chevron-down"></i></div>
+                    <div class="accordion-body">Não! Você paga mês a mês e pode cancelar quando quiser sem qualquer tipo de multa ou burocracia.</div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">Funciona na minha Smart TV? <i class="fas fa-chevron-down"></i></div>
+                    <div class="accordion-body">Sim! Somos compatíveis com Samsung, LG, Android TV e qualquer dispositivo que aceite instalação de aplicativos ou via navegador.</div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">É legalizado? <i class="fas fa-chevron-down"></i></div>
+                    <div class="accordion-body">Atuamos como um agregador de serviços de streaming internacionais, garantindo a melhor experiência de usuário dentro das normas de tecnologia.</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <h2 class="title">Dúvidas Frequentes</h2>
+    <section class="cta-final">
+        <div class="container">
+            <div class="cta-box">
+                <h2>Comece agora sua experiência PipocaFlix</h2>
+                <p>Junte-se a mais de 50.000 usuários satisfeitos.</p>
+                <a href="#" class="btn btn-primary btn-lg pulse">🚀 QUERO ACESSO AGORA</a>
+            </div>
+        </div>
+    </section>
 
-    <details>
-      <summary>Como recebo meu acesso?</summary>
-      <p>O acesso é enviado por WhatsApp ou e-mail.</p>
-    </details>
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-info">
+                <div class="logo">🔥 PIPOCA<span>FLIX</span></div>
+                <p>A maior revolução no entretenimento digital. Filmes, séries e TV ao vivo na palma da sua mão.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Links Úteis</h4>
+                <a href="#">Termos de Uso</a>
+                <a href="#">Privacidade</a>
+                <a href="#">Suporte</a>
+            </div>
+            <div class="footer-social">
+                <h4>Siga-nos</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 PipocaFlix - Todos os direitos reservados.</p>
+        </div>
+    </footer>
 
-    <details>
-      <summary>Quais dispositivos são compatíveis?</summary>
-      <p>TV, celular, PC, Android, iOS e TV Box.</p>
-    </details>
+    <a href="#" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-
-  <h2>PIPOCA<span>FLIX</span></h2>
-
-  <p>
-    © 2026 PipocaFlix - Todos os direitos reservados
-  </p>
-
-</footer>
-
+    <script src="script.js"></script>
 </body>
 </html>
