@@ -106,3 +106,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+// DESATIVAR TILT EM MOBILE
+if (window.innerWidth < 1024) {
+    document.querySelectorAll('.collection-card').forEach(card => {
+        card.style.transform = 'none';
+        card.onmousemove = null;
+        card.onmouseleave = null;
+    });
+}

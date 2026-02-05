@@ -518,3 +518,215 @@ footer {
     }
 
 }
+/* ===========================
+   RESPONSIVIDADE REAL OFICIAL
+=========================== */
+
+/* --- AJUSTE GLOBAL MOBILE --- */
+@media (max-width: 768px) {
+
+    body {
+        font-size: 15px;
+    }
+
+    section {
+        padding: 60px 0;
+    }
+
+    .container {
+        padding: 0 6%;
+    }
+
+    p {
+        line-height: 1.7;
+    }
+
+}
+
+/* ===========================
+   HERO MOBILE
+=========================== */
+@media (max-width: 768px) {
+
+    .hero {
+        height: auto;
+        padding: 140px 0 100px;
+    }
+
+    .hero p {
+        margin-bottom: 30px;
+    }
+
+    .hero-btns {
+        gap: 15px;
+    }
+
+    .streaming-logos img {
+        height: 24px;
+    }
+}
+
+/* ===========================
+   STATS MOBILE
+=========================== */
+@media (max-width: 768px) {
+
+    .stats-grid {
+        gap: 20px;
+    }
+
+    .stat-item {
+        padding: 30px 20px;
+    }
+}
+
+/* ===========================
+   LANÇAMENTOS → CAROUSEL MOBILE
+=========================== */
+@media (max-width: 768px) {
+
+    .movie-grid {
+        display: flex;
+        overflow-x: auto;
+        gap: 15px;
+        padding-bottom: 10px;
+        scroll-snap-type: x mandatory;
+    }
+
+    .movie-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .movie-card {
+        min-width: 140px;
+        max-width: 140px;
+        flex: 0 0 auto;
+        scroll-snap-align: start;
+    }
+
+    .movie-card:hover {
+        transform: none;
+    }
+}
+
+/* ===========================
+   COLEÇÕES → CAROUSEL MOBILE
+=========================== */
+@media (max-width: 768px) {
+
+    .collections-grid {
+        display: flex;
+        overflow-x: auto;
+        gap: 20px;
+        padding-bottom: 20px;
+        scroll-snap-type: x mandatory;
+    }
+
+    .collections-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .collection-card {
+        min-width: 260px;
+        height: 320px;
+        flex: 0 0 auto;
+        scroll-snap-align: start;
+    }
+
+    .card-content {
+        padding: 25px;
+    }
+}
+
+/* ===========================
+   VSL MOBILE
+=========================== */
+@media (max-width: 768px) {
+
+    .video-wrapper {
+        border-radius: 15px;
+    }
+
+    .play-btn-big {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+}
+
+/* ===========================
+   CATEGORIAS MOBILE
+=========================== */
+@media (max-width: 768px) {
+
+    .category-list {
+        gap: 10px;
+    }
+
+    .cat-pill {
+        font-size: 0.8rem;
+        padding: 10px 16px;
+    }
+}
+
+/* ===========================
+   PRICING MOBILE
+=========================== */
+@media (max-width: 768px) {
+
+    .pricing-grid-evolved {
+        gap: 25px;
+    }
+
+    .plan-card {
+        padding: 35px 20px;
+    }
+
+    .price {
+        font-size: 2.1rem;
+    }
+}
+
+/* ===========================
+   TELEGRAM MOBILE
+=========================== */
+@media (max-width: 768px) {
+
+    .telegram-card {
+        padding: 40px 25px;
+    }
+
+    .telegram-card i {
+        font-size: 3rem;
+    }
+}
+
+/* ===========================
+   FOOTER MOBILE
+=========================== */
+@media (max-width: 768px) {
+
+    .footer-grid {
+        gap: 30px;
+        text-align: center;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+}
+
+/* ===========================
+   DESKTOP FIX (NADA ESTOURA)
+=========================== */
+@media (min-width: 1024px) {
+
+    .movie-card:hover {
+        transform: scale(1.08);
+    }
+
+    .collection-card {
+        height: 380px;
+    }
+}
+
