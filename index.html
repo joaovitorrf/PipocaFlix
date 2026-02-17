@@ -1,332 +1,420 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>PIPOCAFLIX | O Futuro do Streaming em 4K Ultra HD</title>
-    <meta name="description" content="Assista Netflix, Disney+, HBO Max e mais de 800 canais em um só lugar. Streaming premium sem travamentos com a PipocaFlix.">
-    <meta name="keywords" content="streaming, filmes 4k, canais de tv, iptv premium, pipocaflix, séries online">
-    <meta property="og:title" content="PIPOCAFLIX | Sua Experiência Cinematográfica Definitiva">
-    <meta property="og:description" content="Acesse o catálogo mais completo do mundo.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=1200">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>PipocaFlix — Filmes e Séries Online</title>
+  <meta name="description" content="Assista filmes e séries online gratuitamente no PipocaFlix. A maior plataforma de streaming do Brasil." />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="PipocaFlix — Filmes e Séries Online" />
+  <meta property="og:type" content="website" />
 
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- CSS Principal -->
+  <link rel="stylesheet" href="../assets/css/style.css" />
+
+  <!-- Social Bar (Monetização) -->
+  <script src="https://pl28456424.effectivegatecpm.com/af/b2/ae/afb2aeef36a1a40f4d3634823ebf0f59.js" type="text/javascript"></script>
 </head>
 <body>
 
-    <div class="loader" id="loader">
-        <div class="spinner"></div>
-        <h2 class="logo-text">🔥 PIPOCA<span>FLIX</span></h2>
+<!-- ===== HEADER ===== -->
+<header id="header">
+  <a href="index.html" class="nav-logo">🍿 PIPOCAFLIX</a>
+
+  <nav>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html" class="active">Início</a></li>
+      <li><a href="#filmes">Filmes</a></li>
+      <li><a href="#series">Séries</a></li>
+    </ul>
+  </nav>
+
+  <div class="search-wrapper">
+    <span class="search-icon">🔍</span>
+    <input type="search" id="search-input" placeholder="Buscar filmes, séries..." autocomplete="off" />
+    <div id="search-results"></div>
+  </div>
+
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- ===== HERO ===== -->
+<section id="hero">
+  <div class="hero-bg" id="hero-bg" style="background-image: url('');"></div>
+  <div class="hero-content" id="hero-content">
+    <div class="hero-badge" id="hero-badge">🔥 Em destaque</div>
+    <h1 class="hero-title" id="hero-title">Carregando...</h1>
+    <div class="hero-meta" id="hero-meta"></div>
+    <p class="hero-sinopse" id="hero-sinopse"></p>
+    <div class="hero-actions" id="hero-actions"></div>
+  </div>
+</section>
+
+<!-- ===== MAIN ===== -->
+<main id="main-content">
+
+  <!-- Banner Ad (Header) -->
+  <div class="ad-banner">
+    <div class="ad-banner-content">
+      <div id="container-cccc7245f0c46289c4b3a2911da39bca"></div>
     </div>
+  </div>
+  <script async data-cfasync="false" src="https://pl28456427.effectivegatecpm.com/cccc7245f0c46289c4b3a2911da39bca/invoke.js"></script>
 
-    <header id="header">
-        <div class="container nav-container">
-            <div class="logo">🔥 PIPOCA<span>FLIX</span></div>
-            <nav>
-                <a href="#inicio">Início</a>
-                <a href="#lancamentos">Lançamentos</a>
-                <a href="#colecoes">Coleções</a>
-                <a href="#beneficios">Benefícios</a>
-                <a href="#planos">Planos</a>
-            </nav>
-            <div class="nav-actions">
-                <a href="#planos" class="btn btn-primary btn-sm">ASSINAR AGORA</a>
+  <!-- Filtros de Categoria -->
+  <div class="category-pills" id="category-pills">
+    <button class="cat-pill active" data-cat="todos">Todos</button>
+  </div>
+
+  <!-- Tabs -->
+  <div class="content-section" style="padding-bottom: 0;">
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="todos" onclick="setTab(this, 'todos')">🎬 Todos</button>
+      <button class="tab-btn" data-tab="filmes" onclick="setTab(this, 'filmes')">🎥 Filmes</button>
+      <button class="tab-btn" data-tab="series" onclick="setTab(this, 'series')">📺 Séries</button>
+    </div>
+  </div>
+
+  <!-- Grid Todos -->
+  <section class="content-section" id="section-todos">
+    <div class="section-header">
+      <h2 class="section-title" id="section-todos-title">Todos</h2>
+    </div>
+    <div class="cards-row" id="grid-todos">
+      <!-- Skeletons -->
+      <div class="card skeleton"></div>
+      <div class="card skeleton"></div>
+      <div class="card skeleton"></div>
+      <div class="card skeleton"></div>
+      <div class="card skeleton"></div>
+      <div class="card skeleton"></div>
+      <div class="card skeleton"></div>
+      <div class="card skeleton"></div>
+    </div>
+  </section>
+
+  <!-- Grid Filmes -->
+  <section class="content-section" id="section-filmes" style="display:none;">
+    <div class="section-header">
+      <h2 class="section-title">Filmes</h2>
+    </div>
+    <div class="cards-row" id="grid-filmes"></div>
+  </section>
+
+  <!-- Grid Séries -->
+  <section class="content-section" id="section-series" style="display:none;">
+    <div class="section-header">
+      <h2 class="section-title">Séries</h2>
+    </div>
+    <div class="cards-row" id="grid-series"></div>
+  </section>
+
+  <!-- Ad Entre Seções -->
+  <div class="ad-banner">
+    <div class="ad-banner-content">
+      <div id="container-cccc7245f0c46289c4b3a2911da39bca-2"></div>
+    </div>
+  </div>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer id="footer">
+  <span class="footer-logo">🍿 PIPOCAFLIX</span>
+  <p class="footer-tagline">A melhor experiência de streaming gratuito.</p>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>Conteúdo</h4>
+      <a href="#filmes">Filmes</a>
+      <a href="#series">Séries</a>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <a href="#">Termos de Uso</a>
+      <a href="#">Privacidade</a>
+    </div>
+    <div class="footer-col">
+      <h4>Suporte</h4>
+      <a href="#">Contato</a>
+      <a href="#">FAQ</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2024 PipocaFlix. Todos os direitos reservados.</span>
+    <span>Feito com 🍿 no Brasil</span>
+  </div>
+</footer>
+
+<!-- Back to top -->
+<button id="back-to-top" title="Voltar ao topo">↑</button>
+
+<!-- JS Modules -->
+<script src="../assets/js/security.js"></script>
+<script src="../assets/js/api.js"></script>
+<script src="../assets/js/search.js"></script>
+
+<script>
+// =====================================================
+// INDEX.JS — Lógica principal da homepage
+// =====================================================
+
+let catalogFilmes = [];
+let catalogSeries = [];
+let catalogTudo = [];
+let currentCat = 'todos';
+let currentTab = 'todos';
+
+// ===== SCROLL HEADER =====
+const header = document.getElementById('header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 50);
+  const backToTop = document.getElementById('back-to-top');
+  backToTop.classList.toggle('visible', window.scrollY > 400);
+}, { passive: true });
+
+document.getElementById('back-to-top').addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// ===== HAMBURGER =====
+document.getElementById('hamburger').addEventListener('click', () => {
+  document.getElementById('nav-links').classList.toggle('open');
+});
+
+// ===== GERAR CARD =====
+function criarCard(item) {
+  const tipo = item.tipo || 'filme';
+  const pagina = tipo === 'serie' ? 'serie.html' : 'filme.html';
+  const nome = item.nome || 'Sem título';
+  const capa = item.capa || '';
+  const cat = item.categoria || '';
+  const ano = item.ano || '';
+
+  const card = document.createElement('a');
+  card.className = 'card fade-in';
+  card.href = `${pagina}?nome=${encodeURIComponent(nome)}`;
+  card.innerHTML = `
+    ${capa ? `<img class="card-thumb" src="${capa}" alt="${nome}" loading="lazy" onerror="this.style.display='none'"/>` : ''}
+    <div class="card-overlay">
+      <div class="card-title">${nome}</div>
+      <div class="card-meta">${cat}${cat && ano ? ' • ' : ''}${ano}</div>
+    </div>
+    <div class="card-play">
+      <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+    </div>
+    <span class="card-badge">${tipo === 'serie' ? '📺 SÉRIE' : '🎬 FILME'}</span>
+  `;
+  return card;
+}
+
+// ===== RENDERIZAR GRID =====
+function renderGrid(items, gridId) {
+  const grid = document.getElementById(gridId);
+  grid.innerHTML = '';
+  if (!items.length) {
+    grid.innerHTML = `
+      <div class="no-content" style="grid-column: 1/-1;">
+        <div style="font-size:3rem;margin-bottom:1rem;">😕</div>
+        <h3>Nada encontrado</h3>
+        <p>Tente outro filtro ou categoria.</p>
+      </div>
+    `;
+    return;
+  }
+  const frag = document.createDocumentFragment();
+  items.forEach(item => frag.appendChild(criarCard(item)));
+  grid.appendChild(frag);
+}
+
+// ===== HERO =====
+function setHero(item) {
+  if (!item) return;
+  const bg = document.getElementById('hero-bg');
+  const title = document.getElementById('hero-title');
+  const meta = document.getElementById('hero-meta');
+  const sinopse = document.getElementById('hero-sinopse');
+  const actions = document.getElementById('hero-actions');
+  const badge = document.getElementById('hero-badge');
+
+  bg.style.backgroundImage = `url('${item.capa || ''}')`;
+  title.textContent = item.nome || '';
+  sinopse.textContent = item.sinopse || '';
+  badge.textContent = item.tipo === 'serie' ? '📺 Série em Destaque' : '🔥 Filme em Destaque';
+
+  meta.innerHTML = `
+    ${item.ano ? `<span>📅 ${item.ano}</span>` : ''}
+    ${item.duracao ? `<span>⏱️ ${item.duracao}</span>` : ''}
+    ${item.categoria ? `<span>🎭 ${item.categoria}</span>` : ''}
+    ${item.audio ? `<span>🔊 ${item.audio}</span>` : ''}
+  `;
+
+  const pagina = item.tipo === 'serie' ? 'serie.html' : 'filme.html';
+  actions.innerHTML = `
+    <a href="${pagina}?nome=${encodeURIComponent(item.nome)}" class="btn-primary">▶ Assistir agora</a>
+    <a href="${pagina}?nome=${encodeURIComponent(item.nome)}" class="btn-secondary">ℹ️ Mais detalhes</a>
+  `;
+}
+
+// ===== CATEGORIAS =====
+function buildCategoryPills(items) {
+  const cats = new Set();
+  items.forEach(item => {
+    if (item.categoria) {
+      item.categoria.split(',').forEach(c => cats.add(c.trim()));
+    }
+  });
+
+  const container = document.getElementById('category-pills');
+  container.innerHTML = '<button class="cat-pill active" data-cat="todos" onclick="filterCat(this,\'todos\')">Todos</button>';
+
+  cats.forEach(cat => {
+    if (!cat) return;
+    const btn = document.createElement('button');
+    btn.className = 'cat-pill';
+    btn.dataset.cat = cat;
+    btn.textContent = cat;
+    btn.onclick = function() { filterCat(this, cat); };
+    container.appendChild(btn);
+  });
+}
+
+function filterCat(btn, cat) {
+  document.querySelectorAll('.cat-pill').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  currentCat = cat;
+  applyFilters();
+}
+
+// ===== TABS =====
+function setTab(btn, tab) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  currentTab = tab;
+  document.getElementById('section-todos').style.display = tab === 'todos' ? '' : 'none';
+  document.getElementById('section-filmes').style.display = tab === 'filmes' ? '' : 'none';
+  document.getElementById('section-series').style.display = tab === 'series' ? '' : 'none';
+  applyFilters();
+}
+
+// ===== APLICAR FILTROS =====
+function applyFilters() {
+  const filterItems = (arr) => {
+    if (currentCat === 'todos') return arr;
+    return arr.filter(item =>
+      item.categoria && item.categoria.toLowerCase().includes(currentCat.toLowerCase())
+    );
+  };
+
+  const titulo = currentCat === 'todos' ? 'Todos os Conteúdos' : currentCat;
+  const todosEl = document.getElementById('section-todos-title');
+  if (todosEl) todosEl.textContent = titulo;
+
+  renderGrid(filterItems(catalogTudo), 'grid-todos');
+  renderGrid(filterItems(catalogFilmes), 'grid-filmes');
+  renderGrid(filterItems(catalogSeries), 'grid-series');
+}
+
+// ===== BUSCA =====
+const searchInput = document.getElementById('search-input');
+const searchResults = document.getElementById('search-results');
+
+searchInput.addEventListener('input', (e) => {
+  const val = e.target.value.trim();
+  if (!val) {
+    searchResults.classList.remove('active');
+    return;
+  }
+  Search.query(val);
+});
+
+searchInput.addEventListener('focus', (e) => {
+  if (e.target.value.trim()) searchResults.classList.add('active');
+});
+
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.search-wrapper')) {
+    searchResults.classList.remove('active');
+  }
+});
+
+// ===== INICIALIZAR BUSCA =====
+function initSearch(catalog) {
+  Search.init(catalog, (results, query) => {
+    if (!query) {
+      searchResults.classList.remove('active');
+      return;
+    }
+    if (!results.length) {
+      searchResults.innerHTML = `<div style="padding:1.2rem;text-align:center;color:var(--text-muted);font-size:.85rem;">Nenhum resultado para "<strong>${query}</strong>"</div>`;
+    } else {
+      searchResults.innerHTML = results.slice(0, 8).map(item => {
+        const pagina = item.tipo === 'serie' ? 'serie.html' : 'filme.html';
+        return `
+          <a class="search-item" href="${pagina}?nome=${encodeURIComponent(item.nome)}">
+            ${item.capa ? `<img class="search-item-thumb" src="${item.capa}" alt="${item.nome}" loading="lazy"/>` : ''}
+            <div class="search-item-info">
+              <div class="search-item-title">${item.nome}</div>
+              <div class="search-item-meta">${item.ano || ''}${item.ano && item.categoria ? ' • ' : ''}${item.categoria || ''}</div>
             </div>
+            <span class="search-item-type">${item.tipo === 'serie' ? 'SÉRIE' : 'FILME'}</span>
+          </a>
+        `;
+      }).join('');
+    }
+    searchResults.classList.add('active');
+  });
+}
+
+// ===== MAIN INIT =====
+async function init() {
+  try {
+    const { filmes, series } = await API.getTudo();
+
+    catalogFilmes = filmes;
+    catalogSeries = series;
+    catalogTudo = [...filmes, ...series];
+
+    // Hero com item aleatório
+    if (catalogTudo.length) {
+      const featured = catalogTudo[Math.floor(Math.random() * Math.min(10, catalogTudo.length))];
+      setHero(featured);
+    }
+
+    // Renderizar grids
+    renderGrid(catalogTudo, 'grid-todos');
+    renderGrid(catalogFilmes, 'grid-filmes');
+    renderGrid(catalogSeries, 'grid-series');
+
+    // Categorias
+    buildCategoryPills(catalogTudo);
+
+    // Busca
+    initSearch(catalogTudo);
+
+  } catch (err) {
+    console.warn('[PipocaFlix] Erro ao inicializar:', err);
+    ['grid-todos', 'grid-filmes', 'grid-series'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.innerHTML = `
+        <div class="no-content" style="grid-column:1/-1">
+          <div style="font-size:2rem">⚠️</div>
+          <h3>Erro ao carregar</h3>
+          <p>Verifique sua conexão e recarregue a página.</p>
         </div>
-    </header>
+      `;
+    });
+  }
+}
 
-    <section class="hero" id="inicio">
-        <div class="hero-overlay"></div>
-        <div class="container hero-content">
-            <span class="badge neon-pulse">DISPONÍVEL EM 4K ULTRA HD</span>
-            <h1>Sua plataforma definitiva de <br><span>entretenimento</span></h1>
-            <p>O catálogo mais completo do mundo: Netflix, Disney+, HBO, Prime Video e +800 canais ao vivo. Tudo em um único acesso premium.</p>
-            
-            <div class="hero-btns">
-                <a href="https://wa.me/SEU_NUMERO" class="btn btn-primary btn-lg pulse">QUERO ACESSO IMEDIATO</a>
-                <a href="#vsl" class="btn btn-glass btn-lg">ASSISTIR DEMONSTRAÇÃO</a>
-            </div>
-
-            <div class="streaming-logos">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Disney%2B_logo.svg" alt="Disney">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/HBO_Max_Logo.svg" alt="HBO">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Prime_Video.png" alt="Prime">
-            </div>
-        </div>
-    </section>
-
-    <section class="stats">
-        <div class="container stats-grid">
-            <div class="stat-item">
-                <h3 class="counter" data-target="40000">0</h3>
-                <p>Filmes</p>
-            </div>
-            <div class="stat-item">
-                <h3 class="counter" data-target="10000">0</h3>
-                <p>Séries</p>
-            </div>
-            <div class="stat-item">
-                <h3 class="counter" data-target="800">0</h3>
-                <p>Canais de TV</p>
-            </div>
-            <div class="stat-item">
-                <div class="neon-text">4K</div>
-                <p>Ultra Qualidade</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="lancamentos" id="lancamentos">
-        <div class="container">
-            <div class="section-header">
-                <h2>🔥 Lançamentos Recentes</h2>
-                <div class="underline"></div>
-            </div>
-            <div class="movie-grid">
-                <div class="movie-card skeleton">
-                    <img src="https://image.tmdb.org/t/p/w500/uDsvTUfS1AB7hY6Yf97Yv9YmI99.jpg" loading="lazy" alt="Movie">
-                    <div class="movie-info">
-                        <span>Ação</span>
-                        <a href="#planos" class="play-mini"><i class="fas fa-play"></i></a>
-                    </div>
-                </div>
-                <div class="movie-card"><img src="https://image.tmdb.org/t/p/w500/8Gxv8nYYhgaarRfSotvSyyvxnb0.jpg" loading="lazy"></div>
-                <div class="movie-card"><img src="https://image.tmdb.org/t/p/w500/7WsyChQLEvXpS0kBvO5aP9unZDZ.jpg" loading="lazy"></div>
-                <div class="movie-card"><img src="https://image.tmdb.org/t/p/w500/q719jXXLsV98uUuY0pX7p4m78YF.jpg" loading="lazy"></div>
-                <div class="movie-card"><img src="https://image.tmdb.org/t/p/w500/v9Gl799o9SGEZyi97YvY7vR9sMo.jpg" loading="lazy"></div>
-                <div class="movie-card mobile-hide"><img src="https://image.tmdb.org/t/p/w500/m03jE42W9kybdmBbhI7qKRm6pT3.jpg" loading="lazy"></div>
-                <div class="movie-card mobile-hide"><img src="https://image.tmdb.org/t/p/w500/ui4DrH1cKk2vkHkbaKJlyRM678m.jpg" loading="lazy"></div>
-                <div class="movie-card mobile-hide"><img src="https://image.tmdb.org/t/p/w500/kDp1vUBiR1RQqb6GgLelLELqfwU.jpg" loading="lazy"></div>
-                <div class="movie-card mobile-hide"><img src="https://image.tmdb.org/t/p/w500/w87mS6Y7YjS1S3uC0G6z9876.jpg" loading="lazy"></div>
-                <div class="movie-card mobile-hide"><img src="https://image.tmdb.org/t/p/w500/r7DuyYJbaVI0N4qU8XpS9m765.jpg" loading="lazy"></div>
-            </div>
-        </div>
-    </section>
-
-    <section class="colecoes" id="colecoes">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="premium-title">🎬 Coleções Especiais</h2>
-                <p>Os maiores universos do cinema em alta definição</p>
-            </div>
-            <div class="collections-grid">
-                <div class="collection-card" data-tilt>
-                    <div class="card-bg" style="background-image: url('https://images.unsplash.com/photo-1547756536-cde3673fa2e5?q=80&w=600');"></div>
-                    <div class="card-content">
-                        <h3>Harry Potter</h3>
-                        <p>A saga completa do bruxo mais famoso.</p>
-                        <a href="#planos" class="btn-link">Ver coleção <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                    <div class="card-glow"></div>
-                </div>
-                <div class="collection-card" data-tilt>
-                    <div class="card-bg" style="background-image: url('https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?q=80&w=600');"></div>
-                    <div class="card-content">
-                        <h3>Marvel Studios</h3>
-                        <p>Todos os heróis e fases do MCU.</p>
-                        <a href="#planos" class="btn-link">Ver coleção <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                    <div class="card-glow"></div>
-                </div>
-                <div class="collection-card" data-tilt>
-                    <div class="card-bg" style="background-image: url('https://images.unsplash.com/photo-1608889174052-19e346cc037d?q=80&w=600');"></div>
-                    <div class="card-content">
-                        <h3>DC Universe</h3>
-                        <p>A liga da justiça e o submundo de Gotham.</p>
-                        <a href="#planos" class="btn-link">Ver coleção <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                    <div class="card-glow"></div>
-                </div>
-                <div class="collection-card" data-tilt>
-                    <div class="card-bg" style="background-image: url('https://images.unsplash.com/photo-1506466010722-395aa2bef877?q=80&w=600');"></div>
-                    <div class="card-content">
-                        <h3>O Senhor dos Anéis</h3>
-                        <p>A jornada épica pela Terra Média.</p>
-                        <a href="#planos" class="btn-link">Ver coleção <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                    <div class="card-glow"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="vsl" id="vsl">
-        <div class="container">
-            <div class="section-header">
-                <h2>Como funciona a PipocaFlix?</h2>
-                <p>Assista o vídeo abaixo e veja a mágica acontecer</p>
-            </div>
-            <div class="video-wrapper">
-                <div class="video-container" id="videoContainer">
-                    <div class="video-overlay" id="videoOverlay">
-                        <div class="play-btn-big">
-                            <i class="fas fa-play"></i>
-                        </div>
-                        <p>Clique para iniciar</p>
-                    </div>
-                    <video id="vslPlayer" preload="none" poster="https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=1200">
-                        <source src="SEU_LINK_DO_GOOGLE_DRIVE_AQUI" type="video/mp4">
-                        Seu navegador não suporta vídeos.
-                    </video>
-                    <div class="video-loading"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="categorias">
-        <div class="container">
-            <div class="category-list">
-                <div class="cat-pill"><i class="fas fa-gun"></i> Ação</div>
-                <div class="cat-pill"><i class="fas fa-heart"></i> Romance</div>
-                <div class="cat-pill"><i class="fas fa-ghost"></i> Terror</div>
-                <div class="cat-pill"><i class="fas fa-laugh"></i> Comédia</div>
-                <div class="cat-pill"><i class="fas fa-user-ninja"></i> Anime</div>
-                <div class="cat-pill"><i class="fas fa-book"></i> Documentário</div>
-                <div class="cat-pill"><i class="fas fa-child"></i> Infantil</div>
-                <div class="cat-pill"><i class="fas fa-user-secret"></i> Suspense</div>
-                <div class="cat-pill"><i class="fas fa-theater-masks"></i> Drama</div>
-                <div class="cat-pill"><i class="fas fa-rocket"></i> Ficção</div>
-            </div>
-        </div>
-    </section>
-
-    <section class="app-showcase">
-        <div class="container app-grid">
-            <div class="app-text">
-                <h2>Leve o cinema no seu <span>bolso</span></h2>
-                <p>Aplicativo nativo para Android, iOS e todas as Smart TVs. Interface fluida, modo offline e troca de perfis.</p>
-                <div class="app-badges">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Play Store">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store">
-                </div>
-            </div>
-            <div class="app-visual">
-                <div class="mockup-portrait">
-                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=400" alt="App Mobile">
-                </div>
-                <div class="mockup-landscape">
-                    <img src="https://images.unsplash.com/photo-1593784991095-a205069470b6?q=80&w=600" alt="App TV">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="pricing" id="planos">
-        <div class="container">
-            <div class="section-header">
-                <h2>Planos Exclusivos</h2>
-                <p>Escolha a melhor opção para você e sua família</p>
-            </div>
-            <div class="pricing-grid-evolved">
-                
-                <div class="plan-card top-offer">
-                    <div class="timer-badge">⏳ OFERTA LIMITADA (100 VAGAS)</div>
-                    <h3>OFERTA TOP</h3>
-                    <div class="price">R$ 8<span>,45/mês</span></div>
-                    <ul class="plan-features">
-                        <li><i class="fas fa-check"></i> 1 Tela</li>
-                        <li><i class="fas fa-check"></i> Celular e TV</li>
-                        <li><i class="fas fa-check"></i> Qualidade 4K</li>
-                        <li><i class="fas fa-star"></i> Grupo VIP Telegram</li>
-                        <li><i class="fas fa-bolt"></i> Suporte Prioritário</li>
-                    </ul>
-                    <a href="https://wa.me/SEU_LINK" class="btn btn-primary">QUERO ESSA VAGA</a>
-                </div>
-
-                <div class="plan-card">
-                    <h3>BÁSICO</h3>
-                    <div class="price">R$ 9<span>,99/mês</span></div>
-                    <ul class="plan-features">
-                        <li><i class="fas fa-check"></i> Tudo da Oferta Top</li>
-                        <li><i class="fas fa-check"></i> 1 Tela Simultânea</li>
-                    </ul>
-                    <a href="https://wa.me/SEU_LINK" class="btn btn-glass">ASSINAR AGORA</a>
-                </div>
-
-                <div class="plan-card featured">
-                    <div class="popular-tag">RECOMENDADO</div>
-                    <h3>DUO</h3>
-                    <div class="price">R$ 15<span>,99/mês</span></div>
-                    <ul class="plan-features">
-                        <li><i class="fas fa-check"></i> 2 Telas Simultâneas</li>
-                        <li><i class="fas fa-check"></i> Tudo do Básico</li>
-                    </ul>
-                    <a href="https://wa.me/SEU_LINK" class="btn btn-primary">ASSINAR AGORA</a>
-                </div>
-
-                <div class="plan-card">
-                    <h3>PIPOCA DOCE</h3>
-                    <div class="price">R$ 17<span>,99</span></div>
-                    <p class="plan-sub">Acesso por 2 meses</p>
-                    <ul class="plan-features">
-                        <li><i class="fas fa-check"></i> 1 Tela</li>
-                        <li><i class="fas fa-check"></i> Acesso Total</li>
-                    </ul>
-                    <a href="https://wa.me/SEU_LINK" class="btn btn-glass">ASSINAR AGORA</a>
-                </div>
-
-                <div class="plan-card">
-                    <h3>FAMÍLIA</h3>
-                    <div class="price">R$ 42<span>,90/mês</span></div>
-                    <ul class="plan-features">
-                        <li><i class="fas fa-users"></i> 5 Telas Simultâneas</li>
-                        <li><i class="fas fa-check"></i> Qualidade Ultra HD</li>
-                    </ul>
-                    <a href="https://wa.me/SEU_LINK" class="btn btn-glass">ASSINAR AGORA</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="telegram-section">
-        <div class="container">
-            <div class="telegram-card">
-                <div class="tg-content">
-                    <i class="fab fa-telegram"></i>
-                    <h2>Comunidade Exclusiva</h2>
-                    <p>Faça pedidos de filmes, receba avisos de manutenção e atualizações de catálogo em tempo real.</p>
-                    <a href="#" class="btn btn-tg">ENTRAR NO GRUPO VIP</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container footer-grid">
-            <div class="footer-brand">
-                <div class="logo">🔥 PIPOCA<span>FLIX</span></div>
-                <p>A revolução definitiva do entretenimento digital. Experiência cinema onde você estiver.</p>
-            </div>
-            <div class="footer-nav">
-                <h4>Navegação</h4>
-                <a href="#inicio">Home</a>
-                <a href="#lancamentos">Filmes</a>
-                <a href="#planos">Preços</a>
-                <a href="#faq">Suporte</a>
-            </div>
-            <div class="footer-social">
-                <h4>Conecte-se</h4>
-                <div class="social-flex">
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-telegram-plane"></i></a>
-                    <a href="#"><i class="fab fa-whatsapp"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-copy">
-            <p>&copy; 2026 PipocaFlix Premium. Todos os direitos reservados.</p>
-        </div>
-    </footer>
-
-    <a href="#" class="whatsapp-float">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <script src="script.js"></script>
+init();
+</script>
 </body>
 </html>
